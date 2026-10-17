@@ -33,7 +33,11 @@ app.add_middleware(
 
 app.include_router(dev_routes.router, prefix="/api/dev_routes", tags=["dev_routes"])
 
-@app.get("/scalar, include_in_schema=False")
+@app.get("/", include_in_schema=False)
+async def home():
+    return "Hello, Welcome to the Ohana Project"
+
+@app.get("/scalar", include_in_schema=False)
 async def scalar_html():
     return get_scalar_api_reference(
         title="The Ohana Project",
