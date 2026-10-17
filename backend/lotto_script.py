@@ -51,9 +51,6 @@ async def run_lotto_api(playwright: Playwright, game_name: str, start_date: str,
 
     result = []
 
-    headers = await page.get_by_role("columnheader").all_text_contents()
-    result.append(headers)
-
     table_data = await get_table_data(page, game_name, start_date, end_date)
     result.append(table_data)
 
