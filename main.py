@@ -6,6 +6,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from scalar_fastapi import get_scalar_api_reference
 
+from database import Base, engine
+
+from routers import (
+    dev_routes
+)
+
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     # Startup
@@ -24,6 +30,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(dev_routes.router, prefix="/api/dev_routes", tags=["dev_routes"])
 
 @app.get("/scalar, include_in_schema=False")
 async def scalar_html():
