@@ -49,15 +49,12 @@ async def run_lotto_api(playwright: Playwright, game_name: str, start_date: str,
     page = await context.new_page()
     await page.goto("https://www.pcso.gov.ph/SearchLottoResult.aspx")
 
-    result = []
-
     table_data = await get_table_data(page, game_name, start_date, end_date)
-    result.append(table_data)
 
     context.close()
     browser.close()
 
-    return result
+    return table_data
 
 async def get_table_with_api(game_name: str, start_date: str, end_date: str) -> list:
     async with async_playwright() as playwright:
