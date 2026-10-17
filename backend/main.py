@@ -7,7 +7,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from scalar_fastapi import get_scalar_api_reference
 
 from database import Base, engine
-from lotto_script import get_table_with_api
 
 from routers import (
     dev_routes
@@ -38,9 +37,6 @@ app.include_router(dev_routes.router, prefix="/api/dev_routes", tags=["dev_route
 async def home():
     return "Hello, Welcome to the Ohana Project"
 
-@app.get("/lotto")
-async def test_lotto_script():
-    return await get_table_with_api(game_name="all", start_date="October 15, 2026", end_date="October 15, 2026")
 
 @app.get("/scalar", include_in_schema=False)
 async def scalar_html():
