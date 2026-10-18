@@ -51,8 +51,8 @@ async def run_lotto_api(playwright: Playwright, game_name: str, start_date: str,
 
     table_data = await get_table_data(page, game_name, start_date, end_date)
 
-    context.close()
-    browser.close()
+    await context.close()
+    await browser.close()
 
     return table_data
 
