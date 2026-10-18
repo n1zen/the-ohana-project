@@ -20,3 +20,5 @@ class LottoCreate(LottoBase):
 
 class LottoResponse(LottoBase):
     model_config = ConfigDict(from_attributes=True)
+
+    id: int
