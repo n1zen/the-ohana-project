@@ -9,6 +9,7 @@ from scalar_fastapi import get_scalar_api_reference
 from database import Base, engine
 
 from routers import (
+    lotto,
     dev_routes
 )
 
@@ -32,6 +33,7 @@ app.add_middleware(
 )
 
 app.include_router(dev_routes.router, prefix="/api/dev_routes", tags=["dev_routes"])
+app.include_router(lotto.router, prefix="/api/lotto", tags=["lotto"])
 
 @app.get("/", include_in_schema=False)
 async def home():
