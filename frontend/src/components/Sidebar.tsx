@@ -3,7 +3,7 @@ import Nav from "./Nav";
 
 function Sidebar() {
   return (
-    <div className="flex-col w-64 bg-gray-800 text-white rounded-r-lg p-4 shrink-0">
+    <div className="flex-col w-64 bg-gray-50 border-r border-mist-500 p-4 shrink-0">
       {/* Title - Logo */}
       <TitleLogo />
       {/* Nav links */}

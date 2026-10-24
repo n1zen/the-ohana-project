@@ -24,8 +24,8 @@ function Nav() {
                 end={link.to === "/"}
                 className={({ isActive }) =>
                   cn(
-                    "flex items-center gap-3 rounded px-3 py-2",
-                    isActive ? "bg-blue-600 text-white" : "text-gray-300 hover:bg-gray-700",
+                    "flex items-center gap-3 rounded-lg px-3 py-2 my-2",
+                    isActive ? "bg-gray-300" : "hover:bg-gray-200",
                   )
                 }
               >
