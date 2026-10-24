@@ -3,7 +3,7 @@ import { api } from "../lib/api";
 export type LottoResult = {
   id: number;
   game_name: string;
-  draw_date: Date;
+  draw_date: string;
   combination: string;
   prize_pool: string;
   amount_of_winners: string;

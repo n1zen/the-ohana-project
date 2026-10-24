@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { useLottoResultFilter } from "../hooks/useLottoResultFilter";
 import Header from "../components/Header";
+import LottoResultCard from "../components/LottoResultCard";
 
 function HomePage() {
   const [date, setDate] = useState<string>("2026-10-24");
@@ -13,11 +14,16 @@ function HomePage() {
   return (
     <section>
       <Header title="Home" />
-      <ul>
-        {data.map((lottoResult) => (
-          <li key={lottoResult.id}>{lottoResult.game_name}</li>
-        ))}
-      </ul>
+      {data.map((lottoResult) => (
+        <LottoResultCard key={lottoResult.id} 
+          id={lottoResult.id} 
+          game_name={lottoResult.game_name}
+          draw_date={lottoResult.draw_date}
+          combination={lottoResult.combination}
+          prize_pool={lottoResult.prize_pool}
+          amount_of_winners={lottoResult.amount_of_winners}
+        />
+      ))}
       <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
     </section>
   );
