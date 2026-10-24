@@ -1,9 +1,9 @@
-import Header from "../components/Header"
+import Header from "../components/Header";
 
 function HomePage() {
   return (
     <section>
-      <Header title="Home"/>
+      <Header title="Home" />
     </section>
   );
 }
