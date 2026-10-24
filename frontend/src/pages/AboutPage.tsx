@@ -1,7 +1,9 @@
+import Header from "../components/Header";
+
 function AboutPage() {
   return (
     <section>
-      <h4>About</h4>
+      <Header title="About" />
     </section>
   );
 }

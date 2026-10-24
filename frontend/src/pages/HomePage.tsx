@@ -1,7 +1,9 @@
+import Header from "../components/Header"
+
 function HomePage() {
   return (
     <section>
-      <h4>Home Page</h4>
+      <Header title="Home"/>
     </section>
   );
 }
