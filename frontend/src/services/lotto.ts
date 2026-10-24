@@ -22,7 +22,8 @@ export async function getAllLottoResults(): Promise<LottoResult[]> {
 
 export async function getLottoResultByGameAndDateRange(
   params?: GetLottoResultByGameAndDateRangeParams,
+  signal?: AbortSignal,
 ): Promise<LottoResult[]> {
-  const res = await api.get<LottoResult[]>("/lotto/lotto-results/filter", { params });  
+  const res = await api.get<LottoResult[]>("/lotto/lotto-results/filter", { params, signal });
   return res.data;
 }
