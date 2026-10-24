@@ -4,8 +4,8 @@ import { useLottoResultFilter } from "../hooks/useLottoResultFilter";
 import Header from "../components/Header";
 
 function HomePage() {
-  const [startDate, setStartDate] = useState<string>("2026-10-23");
-  const { data, isPending, error } = useLottoResultFilter({ start_date: startDate });
+  const [date, setDate] = useState<string>("2026-10-24");
+  const { data, isPending, error } = useLottoResultFilter({ start_date: date, end_date: date });
 
   if (isPending) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -18,6 +18,7 @@ function HomePage() {
           <li key={lottoResult.id}>{lottoResult.game_name}</li>
         ))}
       </ul>
+      <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
     </section>
   );
 }
