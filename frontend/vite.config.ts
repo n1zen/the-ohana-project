@@ -5,6 +5,9 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   fmt: {},
+  server: {
+    host: true,
+  },
   lint: {
     plugins: ["react", "typescript", "oxc"],
     rules: {

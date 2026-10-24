@@ -1,3 +1,4 @@
+import { Outlet } from "react-router";
 import Sidebar from "../components/Sidebar";
 
 function AppLayout() {
@@ -5,7 +6,7 @@ function AppLayout() {
     <div className="flex min-h-screen">
       <Sidebar />
       <main className="flex-1 p-4">
-        <h4>Main Content</h4>
+        <Outlet />
       </main>
     </div>
   );
